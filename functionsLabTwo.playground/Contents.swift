@@ -48,18 +48,22 @@ let testCasesTwo: [(String, [Character: Int])] = [
 // If the number is a multiple of 3 AND 5, replace it with "FizzBuzz"
 
 // Your function here
-func fizzBuzz(upto n: Int) -> [String] {
-    for num in 1...n {
-if num % 3 == 0 {
-    return ["Fizz"]
-}  else if num % 5 == 0 {
-    return ["Buzz"]
-} else if num % 3 == 0 && num % 5 == 0 {
+func fizzBuzz(upto: Int) -> [String] {
     
+    var fizzBuzzWordArray = [String]()
+    for num in 1...upto {
+        if num % 3 == 0 && num % 5 == 0 {
+            fizzBuzzWordArray.append("FizzBuzz")
+        } else if num % 5 == 0 {
+            fizzBuzzWordArray.append("Buzz")
+        } else if num % 3 == 0 {
+            fizzBuzzWordArray.append("Fizz")
+        } else {
+            fizzBuzzWordArray.append(String(num))
+        }
     }
-    }
-     return ["FizzBuzz"]
-    }
+    return fizzBuzzWordArray
+}
    
 
 let testCasesThree = [
