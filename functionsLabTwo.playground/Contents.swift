@@ -5,6 +5,9 @@ import UIKit
 // Write a function named average(of:) that returns the average of an array of Doubles
 
 // Your function here
+//func average(of: Doubles)
+
+
 
 let testCasesOne: [([Double], Double)] = [
     (input: [1,2,3,4,5], expectedOutput: 3),
@@ -45,6 +48,18 @@ let testCasesTwo: [(String, [Character: Int])] = [
 // If the number is a multiple of 3 AND 5, replace it with "FizzBuzz"
 
 // Your function here
+func fizzBuzz(upto n: Int) -> [String] {
+    for num in 1...n {
+if num % 3 == 0 {
+    return ["Fizz"]
+}  else if num % 5 == 0 {
+    return ["Buzz"]
+} else if num % 3 == 0 && num % 5 == 0 {
+    return ["FizzBuzz"]
+    }
+    }
+    }
+    
 
 let testCasesThree = [
     (input: 20, expectedOutput: ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz", "16", "17", "Fizz", "19", "Buzz"]),
@@ -63,6 +78,20 @@ let testCasesThree = [
 // Write a function named value(_:isGreaterThanAverageOf:) that takes in an array of Doubles and a Double and returns whether the Double is greater than the average
 
 // Your function here
+func value(isGreaterThanAverageOf two: Double, if one:[Double]) ->Bool {
+var sum: Double = 0.0
+    var condition: Bool = false
+for num in one {
+    sum += num
+}
+    let average = sum/Double(one.count)
+    if two > average {
+        condition = true
+    } else {
+        condition = false
+    }
+    return condition
+}
 
 let testCasesFour = [
     (inputOne: 4.0, inputTwo: [1.0,2,3,4,5], expectedOutput: true),
@@ -82,6 +111,11 @@ let testCasesFour = [
 // Write a function that finds the second smallest Int an an array of Ints
 
 // Your function here
+
+func secondSmallestValue(num:Array<Int>) -> Int {
+    let sortedIntArray = num.sorted()
+    return sortedIntArray[1]
+}
 
 let testCasesFive = [
     (input: [1,2,3,4], expectedOutput: 2),
